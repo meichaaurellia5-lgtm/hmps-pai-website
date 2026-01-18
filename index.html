@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -16,56 +16,62 @@
       line-height: 1.7;
     }
 
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #1e3a8a;
+      padding: 12px 20px;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     header {
       background: linear-gradient(135deg, #1e3a8a, #2563eb);
       color: white;
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 10px;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 70px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       color: #1e3a8a;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       text-align: center;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 25px;
     }
 
     .card {
       background: white;
-      padding: 25px 20px;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.12);
-    }
-
-    footer {
-      background: #1e3a8a;
-      color: white;
-      text-align: center;
       padding: 25px;
-      margin-top: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
     /* ACCORDION */
@@ -80,7 +86,6 @@
       text-align: left;
       font-size: 16px;
       margin-top: 15px;
-      transition: background 0.3s;
     }
 
     .accordion:hover {
@@ -95,12 +100,31 @@
       transition: max-height 0.4s ease;
       border-radius: 0 0 12px 12px;
     }
+
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 
 <body>
 
-<header>
+<!-- NAVBAR -->
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#profil">Profil</a>
+  <a href="#struktur">Struktur</a>
+  <a href="#divisi">Divisi</a>
+  <a href="#proker">Program Kerja</a>
+  <a href="#berita">Berita</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<header id="beranda">
   <h1>HMPS Pendidikan Agama Islam (PAI)</h1>
   <p>Website Resmi Himpunan Mahasiswa Program Studi Pendidikan Agama Islam</p>
 </header>
@@ -109,35 +133,27 @@
   <h2>Kata Sambutan Ketua HMPS PAI</h2>
   <p><em>Assalamu’alaikum warahmatullahi wabarakatuh.</em></p>
   <p>
-    Puji syukur ke hadirat Allah SWT atas limpahan rahmat dan karunia-Nya
-    sehingga website resmi Himpunan Mahasiswa Program Studi Pendidikan
-    Agama Islam (HMPS PAI) ini dapat hadir sebagai media informasi dan
-    komunikasi.
+    Website ini menjadi media informasi, dokumentasi, dan transparansi
+    kegiatan HMPS PAI periode 2025–2026.
   </p>
   <p>
-    Website ini kami hadirkan sebagai wadah transparansi kegiatan,
-    dokumentasi program kerja, serta sarana penguatan sinergi antar
-    mahasiswa, pengurus, dan sivitas akademika.
-  </p>
-  <p>
-    Semoga website ini dapat memberikan manfaat dan menjadi langkah
-    positif dalam mewujudkan HMPS PAI yang progresif, berintegritas,
-    dan berdaya saing.
+    Semoga website ini menjadi sarana penguatan sinergi dan kontribusi
+    nyata HMPS PAI bagi mahasiswa dan masyarakat.
   </p>
   <p><em>Wassalamu’alaikum warahmatullahi wabarakatuh.</em></p>
   <p><strong>Ketua HMPS PAI</strong><br>Periode 2025–2026</p>
 </section>
 
-<section>
+<section id="profil">
   <h2>Profil HMPS PAI</h2>
   <p>
     HMPS PAI merupakan organisasi kemahasiswaan tingkat program studi
-    yang menjadi wadah aspirasi, pengembangan keilmuan, penguatan nilai
-    keislaman, serta peningkatan kualitas mahasiswa Pendidikan Agama Islam.
+    sebagai wadah aspirasi, pengembangan keilmuan, penguatan nilai
+    keislaman, dan peningkatan kualitas mahasiswa.
   </p>
 </section>
 
-<section>
+<section id="struktur">
   <h2>Struktur Organisasi HMPS PAI 2026</h2>
   <div class="grid">
     <div class="card"><strong>Ketua Umum</strong><p>Nama Ketua</p></div>
@@ -147,19 +163,19 @@
   </div>
 </section>
 
-<section>
+<section id="divisi">
   <h2>Divisi HMPS PAI</h2>
   <div class="grid">
-    <div class="card"><strong>BPH</strong><p>Koordinasi dan kepemimpinan organisasi.</p></div>
-    <div class="card"><strong>Advokasi</strong><p>Penyaluran aspirasi mahasiswa.</p></div>
-    <div class="card"><strong>Agama & Sosial</strong><p>Kegiatan keislaman dan sosial.</p></div>
-    <div class="card"><strong>Riset & Keilmuan</strong><p>Pengembangan akademik dan riset.</p></div>
-    <div class="card"><strong>Bakat & Minat</strong><p>Pengembangan potensi mahasiswa.</p></div>
-    <div class="card"><strong>JARKOMINFO</strong><p>Media, publikasi, dan dokumentasi.</p></div>
+    <div class="card">BPH</div>
+    <div class="card">Advokasi</div>
+    <div class="card">Agama & Sosial</div>
+    <div class="card">Riset & Keilmuan</div>
+    <div class="card">Bakat & Minat</div>
+    <div class="card">JARKOMINFO</div>
   </div>
 </section>
 
-<section>
+<section id="proker">
   <h2>Program Kerja per Divisi</h2>
 
   <button class="accordion">BPH</button>
@@ -174,49 +190,42 @@
       <li>Laporan Pertanggungjawaban</li>
     </ul>
   </div>
-  
-<button class="accordion">Departemen Advokasi</button>
-<div class="panel">
-  <ul>
-    <li>Ruang Aspirasi Mahasiswa</li>
-    <li>Survey Kepuasan Akademik</li>
-    <li>Forum Dialog Mahasiswa & Prodi</li>
-    <li>Open Konsultasi Akademik</li>
-    <li>Pendampingan Kasus Akademik</li>
-  </ul>
-</div>
-  
-<button class="accordion">Departemen Agama dan Sosial</button>
-<div class="panel">
-  <ul>
-    <li>Kajian Rutin Keislaman</li>
-    <li>Peringatan Hari Besar Islam</li>
-    <li>Peduli Dhuafa</li>
-    <li>Bakti Sosial</li>
-    <li>Gerakan Infaq Mahasiswa</li>
-  </ul>
-</div>
-<button class="accordion">Departemen Riset dan Keilmuan</button>
-<div class="panel">
-  <ul>
-    <li>Kelas Kepenulisan Ilmiah</li>
-    <li>Pelatihan Metodologi Penelitian</li>
-    <li>Diskusi Akademik Mahasiswa</li>
-    <li>Bedah Buku / Jurnal</li>
-    <li>Kompetisi Karya Tulis Ilmiah</li>
-  </ul>
-</div>
-  
-<button class="accordion">Departemen Bakat dan Minat</button>
-<div class="panel">
-  <ul>
-    <li>Lomba Internal Mahasiswa PAI</li>
-    <li>Class Skill & Talent</li>
-    <li>PAI Art & Sport Day</li>
-    <li>Delegasi Lomba Eksternal</li>
-    <li>Pentas Seni Mahasiswa</li>
-  </ul>
-</div>
+
+  <button class="accordion">Advokasi</button>
+  <div class="panel">
+    <ul>
+      <li>Penjaringan Aspirasi Mahasiswa</li>
+      <li>Forum Diskusi Akademik</li>
+      <li>Pendampingan Isu Kemahasiswaan</li>
+    </ul>
+  </div>
+
+  <button class="accordion">Agama & Sosial</button>
+  <div class="panel">
+    <ul>
+      <li>Kajian Keislaman</li>
+      <li>Bakti Sosial</li>
+      <li>Peringatan Hari Besar Islam</li>
+    </ul>
+  </div>
+
+  <button class="accordion">Riset & Keilmuan</button>
+  <div class="panel">
+    <ul>
+      <li>Pelatihan Penulisan Ilmiah</li>
+      <li>Diskusi Akademik</li>
+      <li>Pengembangan Karya Tulis</li>
+    </ul>
+  </div>
+
+  <button class="accordion">Bakat & Minat</button>
+  <div class="panel">
+    <ul>
+      <li>Lomba Internal Mahasiswa</li>
+      <li>Pengembangan Seni & Olahraga</li>
+      <li>Apresiasi Prestasi Mahasiswa</li>
+    </ul>
+  </div>
 
   <button class="accordion">JARKOMINFO</button>
   <div class="panel">
@@ -224,22 +233,22 @@
       <li>AKU — PJ: Haira</li>
       <li>EMC — PJ: Shobri</li>
       <li>CamEIn — PJ: Malikha</li>
-      <li>Video Profil HMPS — PJ: Adinda & Istakhori</li>
+      <li>Video Profil — PJ: Adinda & Istakhori</li>
       <li>Digital Media Management — PJ: Aurel</li>
     </ul>
   </div>
 </section>
 
-<section>
+<section id="berita">
   <h2>Berita & Dokumentasi</h2>
   <div class="card">
     <h3>First Meet Pengurus HMPS PAI 2026</h3>
     <p>Senin, 12 Januari 2026</p>
-    <p>Notulensi dan hasil pembahasan rapat perdana HMPS PAI 2026.</p>
+    <p>Rapat perdana pengurus HMPS PAI periode 2026.</p>
   </div>
 </section>
 
-<section>
+<section id="kontak">
   <h2>Kontak</h2>
   <p>Email: hmpspai@kampus.ac.id</p>
   <p>Instagram: @hmps_pai</p>
