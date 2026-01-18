@@ -1,324 +1,247 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>HMPS Pendidikan Agama Islam</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HMPS Pendidikan Agama Islam</title>
 
-  <style>
-  * {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+<style>
+:root {
+  --navy-dark:#081630;
+  --navy-main:#0f2a55;
+  --navy-soft:#142f5f;
+  --navy-card:#1a3566;
+
+  --gold-main:#e7c873;
+  --gold-soft:#f5e1a4;
+  --text-soft:#e5e7eb;
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #e8eef7; /* biru lembut */
-  color: #e5e7eb;
-  line-height: 1.8;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(to bottom,var(--navy-dark),var(--navy-main));
+  color:var(--text-soft);
+  line-height:1.8;
 }
 
 /* NAVBAR */
-nav {
-  position: sticky;
-  top: 0;
-  background: #0b1a3a;
-  padding: 14px 20px;
-  z-index: 1000;
+nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:#081630;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:18px;
 }
 
-nav a {
-  color: #e6c97a;
-  margin: 0 14px;
-  text-decoration: none;
-  font-weight: 600;
+nav a{
+  color:var(--gold-main);
+  text-decoration:none;
+  font-weight:600;
 }
 
-nav a:hover {
-  color: #f5e3a1;
-}
+nav a:hover{color:var(--gold-soft)}
 
 /* HEADER */
-header {
-  background: linear-gradient(135deg, #0b1a3a, #1f3a8a);
-  color: #e6c97a;
-  padding: 110px 20px;
-  text-align: center;
+header{
+  padding:130px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#081630,#12326a);
 }
 
-header h1 {
-  font-size: 2.9rem;
-  margin-bottom: 14px;
+header h1{
+  color:var(--gold-main);
+  font-size:2.8rem;
 }
 
-header p {
-  color: #d1d5db;
-  font-size: 1.1rem;
+header p{
+  max-width:700px;
+  margin:auto;
+  color:#dbeafe;
 }
 
 /* SECTION */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-  background: #162447;
-  border-radius: 24px;
-  margin-top: 50px;
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+  animation:fadeUp 1s ease both;
 }
 
-/* JUDUL */
-h2 {
-  color: #e6c97a;
-  margin-bottom: 30px;
-  text-align: center;
-  position: relative;
+section:nth-child(even){
+  background:var(--navy-soft);
 }
 
-h2::after {
-  content: "";
-  width: 90px;
-  height: 4px;
-  background: linear-gradient(to right, #e6c97a, #f5e3a1);
-  display: block;
-  margin: 12px auto 0;
-  border-radius: 4px;
+h2{
+  text-align:center;
+  color:var(--gold-main);
+  margin-bottom:40px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 30px;
+h2::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:4px;
+  background:var(--gold-soft);
+  margin:12px auto;
+  border-radius:2px;
 }
 
-/* CARD */
-.card {
-  background: #1e2f5f;
-  padding: 30px 24px;
-  border-radius: 20px;
-  text-align: center;
-  transition: all 0.35s ease;
-  border: 1px solid rgba(230, 201, 122, 0.25);
+/* GRID & CARD */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
 }
 
-.card strong {
-  color: #f5e3a1;
+.card{
+  background:linear-gradient(to bottom right,var(--navy-card),#142c52);
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+  transition:.4s;
 }
 
-.card p {
-  color: #d1d5db;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  background: #243b75;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
 }
 
 /* ACCORDION */
-.accordion {
-  background: linear-gradient(135deg, #0b1a3a, #1f3a8a);
-  color: #e6c97a;
-  cursor: pointer;
-  padding: 20px 24px;
-  width: 100%;
-  border: none;
-  border-radius: 18px;
-  text-align: left;
-  font-size: 16px;
-  margin-top: 22px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.accordion{
+  background:var(--navy-card);
+  color:var(--gold-main);
+  cursor:pointer;
+  padding:18px;
+  width:100%;
+  border:none;
+  border-radius:14px;
+  margin-top:18px;
+  text-align:left;
+  font-size:16px;
 }
 
-.accordion:hover {
-  background: linear-gradient(135deg, #1f3a8a, #243b75);
-}
-
-.panel {
-  background: #1e2f5f;
-  padding: 0 24px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  border-radius: 0 0 18px 18px;
-}
-
-.panel ul {
-  padding: 24px 0;
-  color: #e5e7eb;
+.panel{
+  background:#102a56;
+  overflow:hidden;
+  max-height:0;
+  transition:max-height .4s ease;
+  border-radius:0 0 14px 14px;
+  padding:0 20px;
 }
 
 /* FOOTER */
-footer {
-  background: #0b1a3a;
-  color: #e6c97a;
-  text-align: center;
-  padding: 35px 20px;
-  margin-top: 70px;
-  font-size: 14px;
+footer{
+  background:#081630;
+  padding:35px;
+  text-align:center;
+  color:#cbd5e1;
 }
 
-
-  </style>
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <a href="#beranda">Beranda</a>
-  <a href="#profil">Profil</a>
-  <a href="#struktur">Struktur</a>
-  <a href="#divisi">Divisi</a>
-  <a href="#proker">Program Kerja</a>
-  <a href="#berita">Berita</a>
-  <a href="#kontak">Kontak</a>
+<a href="#profil">Profil</a>
+<a href="#struktur">Struktur</a>
+<a href="#divisi">Divisi</a>
+<a href="#proker">Program Kerja</a>
+<a href="#kontak">Kontak</a>
 </nav>
 
-<header id="beranda">
-  <h1>HMPS Pendidikan Agama Islam (PAI)</h1>
-  <p>Website Resmi Himpunan Mahasiswa Program Studi Pendidikan Agama Islam</p>
+<header>
+<h1>HMPS Pendidikan Agama Islam (PAI)</h1>
+<p>Website Resmi Himpunan Mahasiswa Program Studi Pendidikan Agama Islam</p>
 </header>
 
-<section>
-  <h2>Kata Sambutan Ketua HMPS PAI</h2>
-  <p><em>Assalamu’alaikum warahmatullahi wabarakatuh.</em></p>
-  <p>
-    Website ini menjadi media informasi, dokumentasi, dan transparansi
-    kegiatan HMPS PAI periode 2025–2026.
-  </p>
-  <p>
-    Semoga website ini menjadi sarana penguatan sinergi dan kontribusi
-    nyata HMPS PAI bagi mahasiswa dan masyarakat.
-  </p>
-  <p><em>Wassalamu’alaikum warahmatullahi wabarakatuh.</em></p>
-  <p><strong>Ketua HMPS PAI</strong><br>Periode 2025–2026</p>
-</section>
-
 <section id="profil">
-  <h2>Profil HMPS PAI</h2>
-  <p>
-    HMPS PAI merupakan organisasi kemahasiswaan tingkat program studi
-    sebagai wadah aspirasi, pengembangan keilmuan, penguatan nilai
-    keislaman, dan peningkatan kualitas mahasiswa.
-  </p>
+<h2>Kata Sambutan Ketua HMPS</h2>
+<p><em>Assalamu’alaikum warahmatullahi wabarakatuh.</em></p>
+<p>
+Website ini menjadi media informasi, dokumentasi, dan transparansi kegiatan
+HMPS PAI periode 2025–2026. Semoga menjadi sarana penguatan sinergi dan kontribusi
+nyata bagi mahasiswa dan masyarakat.
+</p>
+<p><em>Wassalamu’alaikum warahmatullahi wabarakatuh.</em></p>
 </section>
 
 <section id="struktur">
-  <h2>Struktur Organisasi HMPS PAI 2026</h2>
-  <div class="grid">
-    <div class="card"><strong>Ketua Umum</strong><p>Nama Ketua</p></div>
-    <div class="card"><strong>Wakil Ketua</strong><p>Nama Wakil</p></div>
-    <div class="card"><strong>Sekretaris Umum</strong><p>Nama Sekretaris</p></div>
-    <div class="card"><strong>Bendahara Umum</strong><p>Nama Bendahara</p></div>
-  </div>
+<h2>Struktur Organisasi</h2>
+<div class="grid">
+<div class="card"><strong>Ketua Umum</strong><p>Nama Ketua</p></div>
+<div class="card"><strong>Wakil Ketua</strong><p>Nama Wakil</p></div>
+<div class="card"><strong>Sekretaris</strong><p>Nama Sekretaris</p></div>
+<div class="card"><strong>Bendahara</strong><p>Nama Bendahara</p></div>
+</div>
 </section>
 
 <section id="divisi">
-  <h2>Divisi HMPS PAI</h2>
-  <div class="grid">
-    <div class="card">BPH</div>
-    <div class="card">Advokasi</div>
-    <div class="card">Agama & Sosial</div>
-    <div class="card">Riset & Keilmuan</div>
-    <div class="card">Bakat & Minat</div>
-    <div class="card">JARKOMINFO</div>
-  </div>
+<h2>Divisi HMPS</h2>
+<div class="grid">
+<div class="card">BPH</div>
+<div class="card">Advokasi</div>
+<div class="card">Agama & Sosial</div>
+<div class="card">Riset & Keilmuan</div>
+<div class="card">Bakat & Minat</div>
+<div class="card">JARKOMINFO</div>
+</div>
 </section>
 
 <section id="proker">
-  <h2>Program Kerja per Divisi</h2>
+<h2>Program Kerja</h2>
 
-  <button class="accordion">BPH</button>
-  <div class="panel">
-    <ul>
-      <li>Sertijab & Sidang AD/ART</li>
-      <li>Rapat Kerja</li>
-      <li>Ruang Dialog</li>
-      <li>E-KTP</li>
-      <li>Meet and Greet</li>
-      <li>IEF</li>
-      <li>Laporan Pertanggungjawaban</li>
-    </ul>
-  </div>
+<button class="accordion">BPH</button>
+<div class="panel">
+<ul>
+<li>Sertijab & Raker</li>
+<li>Ruang Dialog</li>
+<li>Meet and Greet</li>
+<li>Laporan Pertanggungjawaban</li>
+</ul>
+</div>
 
-  <button class="accordion">Advokasi</button>
-  <div class="panel">
-    <ul>
-      <li>Penjaringan Aspirasi Mahasiswa</li>
-      <li>Forum Diskusi Akademik</li>
-      <li>Pendampingan Isu Kemahasiswaan</li>
-    </ul>
-  </div>
+<button class="accordion">JARKOMINFO</button>
+<div class="panel">
+<ul>
+<li>AKU — PJ: Haira</li>
+<li>EMC — PJ: Shobri</li>
+<li>CamEIn — PJ: Malikha</li>
+<li>Digital Media Management — PJ: Aurel</li>
+</ul>
+</div>
 
-  <button class="accordion">Agama & Sosial</button>
-  <div class="panel">
-    <ul>
-      <li>Kajian Keislaman</li>
-      <li>Bakti Sosial</li>
-      <li>Peringatan Hari Besar Islam</li>
-    </ul>
-  </div>
-
-  <button class="accordion">Riset & Keilmuan</button>
-  <div class="panel">
-    <ul>
-      <li>Pelatihan Penulisan Ilmiah</li>
-      <li>Diskusi Akademik</li>
-      <li>Pengembangan Karya Tulis</li>
-    </ul>
-  </div>
-
-  <button class="accordion">Bakat & Minat</button>
-  <div class="panel">
-    <ul>
-      <li>Lomba Internal Mahasiswa</li>
-      <li>Pengembangan Seni & Olahraga</li>
-      <li>Apresiasi Prestasi Mahasiswa</li>
-    </ul>
-  </div>
-
-  <button class="accordion">JARKOMINFO</button>
-  <div class="panel">
-    <ul>
-      <li>AKU — PJ: Haira</li>
-      <li>EMC — PJ: Shobri</li>
-      <li>CamEIn — PJ: Malikha</li>
-      <li>Video Profil — PJ: Adinda & Istakhori</li>
-      <li>Digital Media Management — PJ: Aurel</li>
-    </ul>
-  </div>
-</section>
-
-<section id="berita">
-  <h2>Berita & Dokumentasi</h2>
-  <div class="card">
-    <h3>First Meet Pengurus HMPS PAI 2026</h3>
-    <p>Senin, 12 Januari 2026</p>
-    <p>Rapat perdana pengurus HMPS PAI periode 2026.</p>
-  </div>
 </section>
 
 <section id="kontak">
-  <h2>Kontak</h2>
-  <p>Email: hmpspai@kampus.ac.id</p>
-  <p>Instagram: @hmps_pai</p>
+<h2>Kontak</h2>
+<p>Email: hmpspai@kampus.ac.id</p>
+<p>Instagram: @hmps_pai</p>
 </section>
 
 <footer>
-  © 2026 HMPS Pendidikan Agama Islam
+© 2026 HMPS Pendidikan Agama Islam
 </footer>
 
 <script>
-  const acc = document.getElementsByClassName("accordion");
-  for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-      const panel = this.nextElementSibling;
-      panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-    });
-  }
+const acc=document.getElementsByClassName("accordion");
+for(let i=0;i<acc.length;i++){
+  acc[i].addEventListener("click",function(){
+    const panel=this.nextElementSibling;
+    panel.style.maxHeight=panel.style.maxHeight?null:panel.scrollHeight+"px";
+  });
+}
 </script>
 
 </body>
